@@ -35,16 +35,14 @@ export function Formats() {
       thumbnail: "/video/simple-language.png"
     },
     {
-      type: "video",
+      type: "image",
       title: "Це натхнення!",
-      videoSrc: "/video/inspiration.MP4",
-      thumbnail: "/video/inspiration.png"
+      src: "/images/realteachtwo.jpg"
     },
     {
-      type: "video",
+      type: "image",
       title: "Шокуюче відео тренера",
-      videoSrc: "/video/trainer-video.MP4",
-      thumbnail: "/video/trainer-video.png"
+      src: "/images/realteachone.jpg"
     },
     {
       type: "image",
@@ -66,11 +64,11 @@ export function Formats() {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="aspect-[9/16] relative mx-auto max-w-sm">
               <VideoPlayer
-                src="/video/videooffline.mp4"
+                src="/video/videooffline.MP4"
                 poster="/video/videooffline.png"
                 className="w-full h-full"
                 showBadge={true}
-                badgeText="ОФЛАЙН"
+                badgeText="ОНЛАЙН"
               />
             </div>
 
