@@ -38,6 +38,7 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
         className="w-full h-full object-cover"
         loop
         playsInline
+        preload="metadata"
         poster={poster}
         onClick={togglePlay}
         onEnded={() => setIsPlaying(false)}
@@ -45,9 +46,8 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
         <source src={src} type="video/mp4" />
       </video>
 
-      {/* Play/Pause Overlay */}
       {!isPlaying && (
-        <div 
+        <div
           className="absolute inset-0 bg-black/30 flex items-center justify-center cursor-pointer"
           onClick={togglePlay}
         >
@@ -57,7 +57,6 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
         </div>
       )}
 
-      {/* Controls when playing */}
       {isPlaying && (
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent">
           <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
@@ -67,6 +66,7 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
             >
               <Pause className="text-blue-600" size={16} fill="currentColor" />
             </button>
+
             <button
               onClick={toggleMute}
               className="bg-white/90 rounded-full p-2 hover:scale-110 transition-transform shadow-lg"

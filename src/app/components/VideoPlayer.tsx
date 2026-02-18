@@ -9,7 +9,13 @@ interface VideoPlayerProps {
   badgeText?: string;
 }
 
-export function VideoPlayer({ src, poster, className = "", showBadge = false, badgeText }: VideoPlayerProps) {
+export function VideoPlayer({
+  src,
+  poster,
+  className = "",
+  showBadge = false,
+  badgeText,
+}: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -43,6 +49,7 @@ export function VideoPlayer({ src, poster, className = "", showBadge = false, ba
         className="w-full h-full object-cover"
         loop
         playsInline
+        preload="metadata"
         poster={poster}
         onClick={togglePlay}
         onEnded={() => {
@@ -53,9 +60,8 @@ export function VideoPlayer({ src, poster, className = "", showBadge = false, ba
         <source src={src} type="video/mp4" />
       </video>
 
-      {/* Play/Pause Overlay */}
       {showControls && (
-        <div 
+        <div
           className="absolute inset-0 bg-black/20 flex items-center justify-center cursor-pointer transition-opacity"
           onClick={togglePlay}
         >
@@ -69,7 +75,6 @@ export function VideoPlayer({ src, poster, className = "", showBadge = false, ba
         </div>
       )}
 
-      {/* Controls Bar */}
       {isPlaying && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3 z-20">
           <button
@@ -91,7 +96,6 @@ export function VideoPlayer({ src, poster, className = "", showBadge = false, ba
         </div>
       )}
 
-      {/* Badge */}
       {showBadge && badgeText && (
         <div className="absolute top-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-full font-semibold z-10">
           {badgeText}

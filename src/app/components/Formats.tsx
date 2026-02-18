@@ -18,19 +18,19 @@ export function Formats() {
   > = [
     {
       type: "video",
-      title: "Про атмосферу навчання",
+      title: "Теплі зустрічі",
       videoSrc: "/video/geshtaltstart.MP4",
       thumbnail: "/video/geshtaltstart.png"
     },
     {
       type: "video",
-      title: "Нові знайомства",
+      title: "Велика онлайн спільнота",
       videoSrc: "/video/new-connections.MP4",
       thumbnail: "/video/new-connections.png"
     },
     {
       type: "video",
-      title: "Складне простою мовою",
+      title: "Насичені семінари",
       videoSrc: "/video/simple-language.MP4",
       thumbnail: "/video/simple-language.png"
     },
@@ -41,12 +41,12 @@ export function Formats() {
     },
     {
       type: "image",
-      title: "Шокуюче відео тренера",
+      title: "Реальні знання",
       src: "/images/realteachone.jpg"
     },
     {
       type: "image",
-      title: "Реальне навчання",
+      title: "Глибокі знання",
       src: "/images/realteach.jpg"
     }
   ];
@@ -79,7 +79,7 @@ export function Formats() {
               </h3>
 
               <p className="text-lg text-gray-700 mb-6">
-                Жива група, глибокий контакт, фізична присутність
+               Глибокий живий контакт в Zoom
               </p>
 
               <div className="space-y-4 mb-8">
@@ -87,7 +87,7 @@ export function Formats() {
                   <MapPin className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                   <div>
                     <p className="font-semibold text-gray-900">Локація:</p>
-                    <p className="text-gray-600">Центр міста, затишний простір</p>
+                    <p className="text-gray-600">Обираєте Ви</p>
                   </div>
                 </div>
 
@@ -106,7 +106,7 @@ export function Formats() {
                   <Calendar className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                   <div>
                     <p className="font-semibold text-gray-900">Формат:</p>
-                    <p className="text-gray-600">5 семінарів з періодичністю раз на два місяці. 1 семінар = 3 дні. Живі зустрічі у затишному просторі. П'ятниця 18:00 - 21:00, Субота та Неділя 11:00 - 18:00</p>
+                    <p className="text-gray-600">5 семінарів з періодичністю раз на два місяці. 1 семінар = 3 дні. Онлайн зустрічі. П'ятниця 18:00 - 21:00, Субота та Неділя 11:00 - 18:00</p>
                   </div>
                 </div>
              
