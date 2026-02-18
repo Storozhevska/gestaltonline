@@ -103,7 +103,7 @@ export function TestimonialsCarousel() {
                     {/* Author */}
                     <div className="pt-4 border-t border-gray-200 w-full max-w-md">
                       <p className="text-gray-600 font-medium text-sm sm:text-base">
-                        — {testimonial.author}
+                         {testimonial.author}
                       </p>
                     </div>
                   </div>

@@ -15,7 +15,7 @@ export function Hero() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Навчання гештальт-терапії   <br />I ступінь
+                Навчання гештальт-терапії   <br />I ступінь ОНЛАЙН
               </h1>
               <p className="text-xl sm:text-2xl text-gray-700">
                 Від особистої глибини до міжнародного визнання

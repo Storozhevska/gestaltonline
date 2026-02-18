@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold mb-6">
-            Професійна освіта — це найкраща інвестиція у себе
+            Професійна освіта - це найкраща інвестиція у себе
           </h3>
           <div className="flex justify-center gap-6">
             <a
