@@ -14,7 +14,6 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
 
   const startVideo = () => {
     setVideoLoaded(true);
-
     setTimeout(() => {
       if (videoRef.current) {
         videoRef.current.play();
@@ -50,8 +49,6 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
 
   return (
     <div className="relative w-full h-full">
-
-      {/* Поки не натиснули — просто картинка */}
       {!videoLoaded && poster && (
         <img
           src={poster}
@@ -61,7 +58,6 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
         />
       )}
 
-      {/* Відео створюється тільки після кліку */}
       {videoLoaded && (
         <video
           ref={videoRef}
@@ -96,7 +92,6 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
             >
               <Pause className="text-blue-600" size={16} fill="currentColor" />
             </button>
-
             <button
               onClick={toggleMute}
               className="bg-white/90 rounded-full p-2 hover:scale-110 transition-transform shadow-lg"

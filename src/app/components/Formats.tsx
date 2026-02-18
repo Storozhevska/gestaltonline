@@ -1,4 +1,4 @@
-import { MapPin, Video, Calendar, Users, Euro  } from "lucide-react";
+import { MapPin, Video, Calendar, Users, Euro } from "lucide-react";
 import { ImageWithFallback } from "@/app/components/figma/ImageWithFallback";
 import { Button } from "@/app/components/ui/button";
 import { VideoPlayer } from "@/app/components/VideoPlayer";
@@ -20,35 +20,35 @@ export function Formats() {
       type: "video",
       title: "Теплі зустрічі",
       videoSrc: "/video/geshtaltstart.MP4",
-      thumbnail: "/video/geshtaltstart.png"
+      thumbnail: "/video/geshtaltstart.png",
     },
     {
       type: "video",
       title: "Велика онлайн спільнота",
       videoSrc: "/video/new-connections.MP4",
-      thumbnail: "/video/new-connections.png"
+      thumbnail: "/video/new-connections.png",
     },
     {
       type: "video",
       title: "Насичені семінари",
       videoSrc: "/video/simple-language.MP4",
-      thumbnail: "/video/simple-language.png"
+      thumbnail: "/video/simple-language.png",
     },
     {
       type: "image",
       title: "Це натхнення!",
-      src: "/images/realteachtwo.jpg"
+      src: "/images/realteachtwo.jpg",
     },
     {
       type: "image",
       title: "Реальні знання",
-      src: "/images/realteachone.jpg"
+      src: "/images/realteachone.jpg",
     },
     {
       type: "image",
       title: "Глибокі знання",
-      src: "/images/realteach.jpg"
-    }
+      src: "/images/realteach.jpg",
+    },
   ];
 
   return (
@@ -79,7 +79,7 @@ export function Formats() {
               </h3>
 
               <p className="text-lg text-gray-700 mb-6">
-               Глибокий живий контакт в Zoom
+                Глибокий живий контакт в Zoom
               </p>
 
               <div className="space-y-4 mb-8">
@@ -96,8 +96,7 @@ export function Formats() {
                   <div>
                     <p className="font-semibold text-gray-900">Особливості:</p>
                     <p className="text-gray-600">
-Програма професійної підготовки гештальт-терапевтів МІГІС - інституту, акредитованого EAGT відповідно до найвищих європейських стандартів навчaння
-
+                      Програма професійної підготовки гештальт-терапевтів МІГІС - інституту, акредитованого EAGT відповідно до найвищих європейських стандартів навчaння
                     </p>
                   </div>
                 </div>
@@ -106,21 +105,21 @@ export function Formats() {
                   <Calendar className="text-blue-600 flex-shrink-0 mt-1" size={20} />
                   <div>
                     <p className="font-semibold text-gray-900">Формат:</p>
-                    <p className="text-gray-600">5 семінарів з періодичністю раз на два місяці. 1 семінар = 3 дні. Онлайн зустрічі. П'ятниця 18:00 - 21:00, Субота та Неділя 11:00 - 18:00</p>
+                    <p className="text-gray-600">
+                      5 семінарів з періодичністю раз на два місяці. 1 семінар = 3 дні. Онлайн зустрічі. П'ятниця 18:00 - 21:00, Субота та Неділя 11:00 - 18:00
+                    </p>
                   </div>
                 </div>
-             
 
-              <div className="flex items-start gap-3">
-  <Euro className="text-blue-600 flex-shrink-0 mt-1" size={20} />
-  <div>
-    <p className="font-semibold text-gray-900">Ціна:</p>
-    <p className="text-gray-600">
-      125 євро за семінар
-    </p>
-  </div>
-</div>
- </div>
+                <div className="flex items-start gap-3">
+                  <Euro className="text-blue-600 flex-shrink-0 mt-1" size={20} />
+                  <div>
+                    <p className="font-semibold text-gray-900">Ціна:</p>
+                    <p className="text-gray-600">125 євро за семінар</p>
+                  </div>
+                </div>
+              </div>
+
               <Button
                 onClick={openInterviewForm}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-6 text-lg"
@@ -135,16 +134,11 @@ export function Formats() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {mediaItems.map((item, index) => (
               <div key={index} className="space-y-2">
-                <p className="text-sm font-bold text-gray-900 text-center">
-                  {item.title}
-                </p>
+                <p className="text-sm font-bold text-gray-900 text-center">{item.title}</p>
 
                 <div className="relative aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
                   {item.type === "video" ? (
-                    <SmallVideoPlayer
-                      src={item.videoSrc}
-                      poster={item.thumbnail}
-                    />
+                    <SmallVideoPlayer src={item.videoSrc} poster={item.thumbnail} />
                   ) : (
                     <img
                       src={item.src}
