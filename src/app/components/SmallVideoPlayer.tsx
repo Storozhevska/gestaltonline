@@ -10,8 +10,25 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const startVideo = () => {
+    setVideoLoaded(true);
+
+    setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      }
+    }, 50);
+  };
 
   const togglePlay = () => {
+    if (!videoLoaded) {
+      startVideo();
+      return;
+    }
+
     if (videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
@@ -33,18 +50,31 @@ export function SmallVideoPlayer({ src, poster }: SmallVideoPlayerProps) {
 
   return (
     <div className="relative w-full h-full">
-      <video
-        ref={videoRef}
-        className="w-full h-full object-cover"
-        loop
-        playsInline
-        preload="metadata"
-        poster={poster}
-        onClick={togglePlay}
-        onEnded={() => setIsPlaying(false)}
-      >
-        <source src={src} type="video/mp4" />
-      </video>
+
+      {/* Поки не натиснули — просто картинка */}
+      {!videoLoaded && poster && (
+        <img
+          src={poster}
+          loading="lazy"
+          className="w-full h-full object-cover"
+          onClick={startVideo}
+        />
+      )}
+
+      {/* Відео створюється тільки після кліку */}
+      {videoLoaded && (
+        <video
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          playsInline
+          preload="none"
+          poster={poster}
+          onClick={togglePlay}
+          onEnded={() => setIsPlaying(false)}
+        >
+          <source src={src} type="video/mp4" />
+        </video>
+      )}
 
       {!isPlaying && (
         <div
